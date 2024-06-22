@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jayanthshreekumar.github.io//sitemap.xml
+Sitemap: https://purdue-aida3.github.io//sitemap.xml
