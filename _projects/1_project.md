@@ -1,43 +1,22 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Cognitive Modelling
+description: 
+img: assets/img/cl_background.jpg
 importance: 1
 category: pillars
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page. Here is an edit.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Cognitive modeling is a critical part for realizing AIDA3's vision. In general, there are ve research questions related to this topic: 1) how to dene and quantify cognitive load (CL) and situation awareness (SA); 2) how to classify and predict CL and SA in real time; 3) can we quantify operators' expertise using CL and SA during a mission; 4) what is the minimal set up for answering research question 2) and 3); 5) how to design the system so that CL and SA never exceed the safety thresholds.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+CL and SA are two separate concepts. Together, they describe a person's cognitive states. In general, CL can be interpreted as the amount of mental eort and resources required to process information, perform tasks, or solve problems, and SA can be interpreted as the perception of the elements in the environment within a volume of time and space, the comprehension of their meaning, and the projection of their status in the near future. In recent years, estimating CL and SA via various sensors and machine learning techniques has become popular. Among all sensors, electroencephalography (EEG) and eye tracker are the most popular due to their non-intrusive nature. An extensive research has been done. Nevertheless, there exist several research gaps. Firstly, it is well known that human's cognitive states consist of multiple modalities. For instance, CL is found to be related to both brain's activities and eye movements. However, the majority of the works only consider one modality when they model CL and SA. Secondly, although machine learning algorithms such as the support vector machine and random forest are widely used for estimating CL and SA with physiological data, deep learning models such as convolutional neural network or recurrent neural network are rarely used. This is because the size of the experiment data is usually too small to fully take advantages of deep learning models. Thirdly, current works mostly estimate CL and SA in a short and simple scenarios and they do not demonstrate the real-time applicability. Based on the aforementioned research gaps, we design an experiment and collect data using sensors for various modalities (EEG, eye tracker, and webcam), and propose a multimodal deep learning model. Within the experiment, there are two tasks, one is a simple visual tracking task that aims to collect physiological data in a controlled environment, and the other one is a mission planning task that aims to collect physiological data in a realistic environment. The multimodal deep learning model utilizes and combines the extracted features from each sensor to estimate and predict CL and SA in real-time.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/willis.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
