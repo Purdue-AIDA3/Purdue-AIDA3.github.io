@@ -1,6 +1,6 @@
 ---
 layout: about
-title: home
+title: Home
 permalink: /
 subtitle: Center on AI for Digital, Autonomous, and Augmented Aviation
 
