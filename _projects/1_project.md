@@ -8,8 +8,6 @@ category: pillars
 related_publications: false
 ---
 
-# Cognitive Modeling
-
 ## 1 Overview
 
 Cognitive modeling is a critical part for realizing AIDA3's vision. In general, there are five research questions related to this topic: 1) how to define and quantify cognitive load (CL) and situation awareness (SA); 2) how to classify and predict CL and SA in real time; 3) can we quantify operators' expertise using CL and SA during a mission; 4) what is the minimal set up for answering research question 2) and 3); 5) how to design the system so that CL and SA never exceed the safety thresholds.
