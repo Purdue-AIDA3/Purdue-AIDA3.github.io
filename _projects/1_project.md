@@ -21,15 +21,15 @@ Our experiment (IRB-2023-1933) uses a EEG, an eye tracker, a webcam, and a micro
 
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-5 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/willis.jpg" title="wearable setup" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-7 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/eeg_impedance.jpg" title="impedance" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    One of our staff wearing the EEG and eye tracker on the left. The EEG impedance of a subject prior to the start of the experiment on the right.
+    Figures 1 and 2. One of our staff wearing the EEG and eye tracker on the left. The EEG impedance of a subject prior to the start of the experiment on the right.
 </div>
 
 The nouns for the secondary task are meticulously selected. Firstly, we build a dictionary by combining the noun list from [2] and [3]. Secondly, we use the medical research council psycholinguistic database [4] to obtain the familiarity, imaginability, and Thorndike-Lorg written frequency. Those metrics are widely used in the literature and compared to other metrics, they are available for most nouns in the dictionary. The nouns that do not have one of those values available are removed from the dictionary. Thirdly, we use density-based spatial clustering of applications with noise (DBSCAN) to cluster 190 words. Lastly, we use the Euclidean distance to connect similar nouns one by one and further group those words into subgroups, e.g., 2 words in each subgroup of task 1 and 80 words in each subgroup of task 2.
