@@ -17,7 +17,7 @@ Our work on the safety verification for fixed-wing vehicle robustness applies Li
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/TECS_full_diagram.png" title="tecs diagram" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/TECS_full_diagram 1.png" title="tecs diagram" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
