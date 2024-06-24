@@ -21,10 +21,10 @@ Our experiment (IRB-2023-1933) uses a EEG, an eye tracker, a webcam, and a micro
 
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/willis.jpg" title="wearable setup" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/eeg_impedance.jpg" title="impedance" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
