@@ -2,7 +2,7 @@
 layout: page
 title: Cognitive Modelling
 description: 
-img: assets/img/cl_background.jpg
+img: assets/img/cl_background.jpeg
 importance: 1
 category: pillars
 related_publications: false
