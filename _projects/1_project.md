@@ -8,30 +8,29 @@ category: pillars
 related_publications: false
 ---
 
-## 1 Overview
+## Overview
 
 Cognitive modeling is a critical part for realizing AIDA3's vision. In general, there are five research questions related to this topic: 1) how to define and quantify cognitive load (CL) and situation awareness (SA); 2) how to classify and predict CL and SA in real time; 3) can we quantify operators' expertise using CL and SA during a mission; 4) what is the minimal set up for answering research question 2) and 3); 5) how to design the system so that CL and SA never exceed the safety thresholds.
 
 CL and SA are two separate concepts. Together, they describe a person's cognitive states.
 In general, CL can be interpreted as the amount of mental effort and resources required to process information, perform tasks, or solve problems, and SA can be interpreted as the perception of the elements in the environment within a volume of time and space, the comprehension of their meaning, and the projection of their status in the near future. In recent years, estimating CL and SA via various sensors and machine learning techniques has become popular. Among all sensors, electroencephalography (EEG) and eye tracker are the most popular due to their non-intrusive nature. An extensive research has been done. Nevertheless, there exist several research gaps. Firstly, it is well known that human's cognitive states consist of multiple modalities. For instance, CL is found to be related to both brain's activities and eye movements. However, the majority of the works only consider one modality when they model CL and SA. Secondly, although machine learning algorithms such as the support vector machine and random forest are widely used for estimating CL and SA with physiological data, deep learning models such as convolutional neural network or recurrent neural network are rarely used. This is because the size of the experiment data is usually too small to fully take advantages of deep learning models. Thirdly, current works mostly estimate CL and SA in a short and simple scenarios and they do not demonstrate the real-time applicability. Based on the aforementioned research gaps, we design an experiment and collect data using sensors for various modalities (EEG, eye tracker, and webcam), and 1 propose a multimodal deep learning model. Within the experiment, there are two tasks, one is a simple visual tracking task that aims to collect physiological data in a controlled environment, and the other one is a mission planning task that aims to collect physiological data in a realistic environment. The multimodal deep learning model utilizes and combines the extracted features from each sensor to estimate and predict CL and SA in real-time.
 
-## 2 Experiment Setup And Design
+## Experiment Setup And Design
 
 Our experiment (IRB-2023-1933) uses a EEG, an eye tracker, a webcam, and a microphone for collecting data. A photo of one of our staff wearing the EEG and eye tracker is shown in Fig. 1. Before the experiment starts, we set up and calibrate the EEG and eye tracker for the best accuracy. The EEG device is the actiCHamp Plus from Briain Vision, which is a 32-channel wet EEG device with up to 100kHz sampling rate. We make sure the impedance of every electrode is below 30k ohms (10k ohms for the reference and ground electrodes) to reduce the noise, an example is shown in Fig. 2. The eye tracker is the Pupil Core from Pupil Labs [1]. We use the built-in calibration program to calibrate it once before the experiment starts and once after each break in the experiment. After each calibration, we ask the subject to look at certain things shown on the monitor and we only proceed if the eye tracker can identify the gaze position accurately. The experiment has two sections. The first section of is a simple visual tracking task with or without a secondary task. This first section is also referred to as "task 1". Task 1 contains multiple trials. In each trial, the subject needs to watch a 10-second video where a red arrow and one or more white arrows move in a constant speed, as shown in Fig. 3. At the end of the video, the arrows will disappear and the subject needs to indicate the position and heading of all arrows by clicking with a mouse, as shown in Fig. 4. In this part, there is an undo button at the top left corner of the monitor for the subject to undo the clicks. Then, the subject needs to complete a NASA-TLX survey where an example is shown in Fig. 5. Completing the NASA-TLX survey is the end of one trial. The indicated position and heading of all arrows are used to compared with the true position and heading to derive labels for the subject's situational awareness (SA) level, and the NASA-TLX survey result will be used as the label of the subject's cognitive load (CL) level. After 15 trials, the subject needs to conduct another 15 trials but with the addition of the secondary task. The secondary task is called verb generation and it requires the subject to verbally respond to a noun with a related verb. In task 1, the noun is announced every 3 seconds. Completing the 15 trials with secondary task is the end of task 1.
 
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/willis.jpg" title="wearable setup" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/eeg_impedance.jpg" title="impedance" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
     One of our staff wearing the EEG and eye tracker on the left. The EEG impedance of a subject prior to the start of the experiment on the right.
 </div>
-
 
 The nouns for the secondary task are meticulously selected. Firstly, we build a dictionary by combining the noun list from [2] and [3]. Secondly, we use the medical research council psycholinguistic database [4] to obtain the familiarity, imaginability, and Thorndike-Lorg written frequency. Those metrics are widely used in the literature and compared to other metrics, they are available for most nouns in the dictionary. The nouns that do not have one of those values available are removed from the dictionary. Thirdly, we use density-based spatial clustering of applications with noise (DBSCAN) to cluster 190 words. Lastly, we use the Euclidean distance to connect similar nouns one by one and further group those words into subgroups, e.g., 2 words in each subgroup of task 1 and 80 words in each subgroup of task 2.
 
@@ -75,7 +74,7 @@ every minute. To do so, we program the monitor to show a five red rectangles and
     Figure 6: The screenshot of a trial in task 2
 </div>
 
-## 3 Multimodal Deep Learning Framework
+## Multimodal Deep Learning Framework
 
 Estimating and predicting CL and SA in real-time is formulated as a supervised multiclass classification and regression problem. The training data is the data collected from task 1. CL labels are the results from NASA-TLX survey and SA labels are computed using the subject's indicated position and heading of all arrows. In total, three modalities that have been shown in the literature to be closely related to cognitive states are considered (EEG, eye tracker, and webcam video) [5]. The use of all modalities (EEG, eye tracker, webcam video) and multimodal deep learning for cognitive states has not been commonly found in the literature. To utilize all modalities effectively, a multimodal learning framework is proposed, shown in Fig. 7. Since the EEG data has very low signal-to-noise ratio, it is preprocessed using EEGLAB [6] to eliminate as many noises and artifacts as possible before deriving various features.
 

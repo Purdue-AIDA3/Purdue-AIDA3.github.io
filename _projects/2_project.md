@@ -12,7 +12,7 @@ giscus_comments: false
 
 Safety assurance for Unmanned Aerial Systems (UASs) throughout their operations is crucial as UASs are becoming more of interest in our daily aerial operations. Especially during the landing phase of flight, the slow-speed environment may pose serious risks to the UASs when there is a presence of external disturbances such as wind and noise. Our analysis kickstarts the safety verification methods to ensure the UAS landing can be successful, minimizing the need for human intervention, unnecessary go-arounds, and forced landings.
 
-# Robustness and Safety Verification of Total Energy Control System Under Disturbances
+## Robustness and Safety Verification of Total Energy Control System Under Disturbances
 Our work on the safety verification for fixed-wing vehicle robustness applies Linear Matrix Inequality (LMI) techniques to perform safety verification of a fixed-wing aircraft's Total Energy Control System (TECS) and demonstrate the Bounded-Input Bounded-Output (BIBO) stability of the system. Our approach focuses on a continuous time longitudinal model of a fixed-wing aircraft with bounded wind disturbances. The TECS controller contains cascaded Proportional-Integral (PI) controllers which complicate the safety verification process as the integrator states must also be considered. We reconsider the TECS controller with a Linear Quadratic Regulator (LQR) with output feedback and show the PI controller gains can be autotuned. We also simulate the longitudinal states of the fixed-wing aircraft with bounded disturbances for verification of the method.
 
 <div class="row">
